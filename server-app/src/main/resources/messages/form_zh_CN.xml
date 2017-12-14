@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>表单</comment>
+    <entry key="user">用户</entry>
+    <entry key="name">用户名</entry>
+    <entry key="userId">用户id</entry>
+    <entry key="nickName">昵称</entry>
+    <entry key="gender">性别</entry>
+    <entry key="birthday">生日</entry>
+    <entry key="password">密码</entry>
+    <entry key="job">职业</entry>
+
+    <entry key="clientKey">客户端KEY</entry>
+    <entry key="nameOrPassword">用户名或者密码</entry>
+
+    <entry key="accessKeyId">accessKeyId(秘钥Id)</entry>
+    <entry key="accessKeySecret">accessKeySecret(秘钥值)</entry>
+    <entry key="accessToken">accessToken</entry>
+
+    <entry key="goodsSku">商品销售属性</entry>
+    <entry key="order">订单</entry>
+    <entry key="goods">商品</entry>
+    <entry key="goodsGroup">商品分组</entry>
+    <entry key="contract">合同文件</entry>
+    <entry key="orderTotalPrice">订单总价</entry>
+    <entry key="due">应付款</entry>
+    <entry key="orderStatus">订单状态</entry>
+    <entry key="sms">短信</entry>
+    <entry key="mobile">手机</entry>
+    <entry key="verifycode">验证码</entry>
+    <entry key="smsType">短信类型</entry>
+    <entry key="payInterface">支付接口</entry>
+    <entry key="version">版本</entry>
+</properties>
+
+

@@ -1,0 +1,38 @@
+server:
+    port: 8081
+    tomcat:
+    uri-encoding: UTF-8
+spring:
+    http:
+        encoding:
+            force: true
+    redis:
+        embeded: true
+        host: 127.0.0.1
+        port: 6382
+        timeout: 2000
+        pool:
+            max-idle: 8
+            min-idle: 1
+            max-active: 8
+            max-wait: -1
+    datasource:
+        embeded: true
+        embededSchema: open
+        port: 3307
+        url: jdbc:mysql://127.0.0.1:3307/open?autoReconnect=true&characterEncoding=utf8&useSSL=false
+        driverClassName: com.mysql.jdbc.Driver
+        username: embededUser
+        password: 111111
+        maxActive: 100
+        initialSize: 5
+        maxWait: 60000
+        minIdle: 5
+        initSqls:
+            - SET NAMES utf8mb4;
+management:
+    context-path: /$manage
+    security: {roles: SUPERUSER, enabled: false}
+account:
+    passwordSalt:  haUY19
+    version: 1

@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   COMMENT ='用户表';
 
 # 插入默认用户数据
-REPLACE INTO user (name, nickName, mobile, uuid, password, money, imgKey, version, create_time, update_time, real_name, id_number, email, address) VALUES ('user', '西门嘉宝', 12345678901, 'dsfdsf', 'S2B5QCSX3AdDMH67CpVjjMxLw19WdR_B7xnSSzb7zOE=', 0, 'http://ui.happy.cn/default/256%402x.png', 0, '2017-08-11 07:59:45', '2017-09-18 07:36:19', '李大个', 293198199907071830, 'asd3334fier@qq.com', '天津市某某某地区地址');
+REPLACE INTO user (name, nickName, mobile, uuid, password, money, imgKey, version, create_time, update_time, real_name, id_number, email, address) VALUES ('user', '西门嘉宝', 12345678901, 'dsfdsf', 'moHu6QIa_evxsU6oa3FQZdB5TSR5yEUEIFkR6kzzE-0=', 0, 'http://ui.happy.cn/default/256%402x.png', 0, '2017-08-11 07:59:45', '2017-09-18 07:36:19', '李大个', 293198199907071830, 'asd3334fier@qq.com', '天津市某某某地区地址');
 
 CREATE TABLE IF NOT EXISTS `access_token` (
   `id`          INT         NOT NULL AUTO_INCREMENT,

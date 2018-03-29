@@ -16,12 +16,7 @@ public class ApplicationStartup implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        //如果不是happy的主机，则获取图片信息
         InetAddress addr = InetAddress.getLocalHost();
         String hostName = addr.getHostName(); //获取本机计算机名称
-        Boolean isHappyHost = Boolean.FALSE;
-        if (hostName.equals("happy")) {
-            isHappyHost = Boolean.FALSE;
-        }
     }
 }

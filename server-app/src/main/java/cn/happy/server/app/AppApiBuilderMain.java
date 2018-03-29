@@ -20,6 +20,7 @@ public class AppApiBuilderMain {
     public static void main(String[] args) throws Exception {
         final String version = "v1";
         File root = new File("server-app");
+        //如果路径错误，可以在这里添加
         if (!root.exists()) {
             root = new File("server/server-app");
         }

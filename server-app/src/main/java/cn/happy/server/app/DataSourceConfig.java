@@ -16,7 +16,7 @@ import java.util.List;
 
 @Configuration
 @EnableTransactionManagement
-@ConfigurationProperties(prefix="spring.datasource")
+@ConfigurationProperties(prefix = "spring.datasource")
 public class DataSourceConfig {
     public DataSourceConfig() {
     }
@@ -28,8 +28,8 @@ public class DataSourceConfig {
 
     @Bean(name = "dataSource", destroyMethod = "close", initMethod = "init")
     @Primary
-    @ConfigurationProperties(prefix="spring.datasource")
-    @Order(Integer.MAX_VALUE)
+    @ConfigurationProperties(prefix = "spring.datasource")
+    @Order
     public DataSource dataSource() throws SQLException {
         DruidDataSource source = new DruidDataSource();
         source.setFilters("stat");

@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ImportResource;
                 "cn.happy.server.app.init",
                 "cn.happy.server.app.api",
                 "cn.happy.server.app.cache",
-                "cn.happy.server.app.util",
         }
 )
 @ServletComponentScan(basePackages = {

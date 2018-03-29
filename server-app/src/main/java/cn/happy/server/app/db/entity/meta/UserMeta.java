@@ -42,9 +42,6 @@ public final class UserMeta extends EntityMeta<UserDO ,UserDO.Key>{
     public static final Field ID_NUMBER = Field.of("id_number");
     public static final Field EMAIL = Field.of("email");
     public static final Field ADDRESS = Field.of("address");
-    public static final Field LICENSE_IMG_KEY = Field.of("license_img_key");
-    public static final Field AUTH_STATUS = Field.of("auth_status");
-    public static final Field AUTH_TYPE = Field.of("auth_type");
 
     public static final Key UNIQUE_MOBILE = Key.of("mobile", true);
     public static final Key UNIQUE_NAME = Key.of("name", true);
@@ -71,9 +68,6 @@ public final class UserMeta extends EntityMeta<UserDO ,UserDO.Key>{
         super.initProperty(ID_NUMBER, "idNumber", String.class, new TypeReference<String>() {});
         super.initProperty(EMAIL, "email", String.class, new TypeReference<String>() {});
         super.initProperty(ADDRESS, "address", String.class, new TypeReference<String>() {});
-        super.initProperty(LICENSE_IMG_KEY, "licenseImgKey", String.class, new TypeReference<String>() {});
-        super.initProperty(AUTH_STATUS, "authStatus", Integer.class, new TypeReference<Integer>() {});
-        super.initProperty(AUTH_TYPE, "authType", Boolean.class, new TypeReference<Boolean>() {});
     }
 
     @Override public String getKeyUpdatePartialPrefixSql(){
@@ -172,18 +166,6 @@ public final class UserMeta extends EntityMeta<UserDO ,UserDO.Key>{
         addressPtr = t.getAddress();
 
         ps.setObject(i++, addressPtr);
-        Object licenseImgKeyPtr;
-        licenseImgKeyPtr = t.getLicenseImgKey();
-
-        ps.setObject(i++, licenseImgKeyPtr);
-        Object authStatusPtr;
-        authStatusPtr = t.getAuthStatus();
-
-        ps.setObject(i++, authStatusPtr);
-        Object authTypePtr;
-        authTypePtr = t.getAuthType();
-
-        ps.setObject(i++, authTypePtr);
         return i;
     }
 
@@ -249,18 +231,6 @@ public final class UserMeta extends EntityMeta<UserDO ,UserDO.Key>{
         addressPtr = t.getAddress();
 
         ps.setObject(i++,  addressPtr);
-        Object licenseImgKeyPtr;
-        licenseImgKeyPtr = t.getLicenseImgKey();
-
-        ps.setObject(i++,  licenseImgKeyPtr);
-        Object authStatusPtr;
-        authStatusPtr = t.getAuthStatus();
-
-        ps.setObject(i++,  authStatusPtr);
-        Object authTypePtr;
-        authTypePtr = t.getAuthType();
-
-        ps.setObject(i++,  authTypePtr);
         return i;
     }
 
@@ -277,21 +247,21 @@ public final class UserMeta extends EntityMeta<UserDO ,UserDO.Key>{
     }
 
     @Override public String getInsertSql(){
-        return "INSERT INTO `user` (`name`,`nickName`,`mobile`,`uuid`,`password`,`money`,`imgKey`,`version`,`create_time`,`update_time`,`real_name`,`id_number`,`email`,`address`,`license_img_key`,`auth_status`,`auth_type`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT INTO `user` (`name`,`nickName`,`mobile`,`uuid`,`password`,`money`,`imgKey`,`version`,`create_time`,`update_time`,`real_name`,`id_number`,`email`,`address`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     }
 
     @Override public String getReplaceSql(){
-        return "REPLACE INTO `user` (`id`,`name`,`nickName`,`mobile`,`uuid`,`password`,`money`,`imgKey`,`version`,`create_time`,`update_time`,`real_name`,`id_number`,`email`,`address`,`license_img_key`,`auth_status`,`auth_type`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "REPLACE INTO `user` (`id`,`name`,`nickName`,`mobile`,`uuid`,`password`,`money`,`imgKey`,`version`,`create_time`,`update_time`,`real_name`,`id_number`,`email`,`address`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     }
 
     @Override public String getFastInsertPrefixSql(){
-        return "INSERT INTO `user` (`name`,`nickName`,`mobile`,`uuid`,`password`,`money`,`imgKey`,`version`,`create_time`,`update_time`,`real_name`,`id_number`,`email`,`address`,`license_img_key`,`auth_status`,`auth_type`) VALUES ";
+        return "INSERT INTO `user` (`name`,`nickName`,`mobile`,`uuid`,`password`,`money`,`imgKey`,`version`,`create_time`,`update_time`,`real_name`,`id_number`,`email`,`address`) VALUES ";
     }
     @Override public String getFastInsertValueItemsSql(){
-        return " (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+        return " (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
     }
     @Override public String getUpdateSql(){
-        return "UPDATE `user` SET `name`=?,`nickName`=?,`mobile`=?,`uuid`=?,`password`=?,`money`=?,`imgKey`=?,`version`=?,`create_time`=?,`update_time`=?,`real_name`=?,`id_number`=?,`email`=?,`address`=?,`license_img_key`=?,`auth_status`=?,`auth_type`=? WHERE `id`=?";
+        return "UPDATE `user` SET `name`=?,`nickName`=?,`mobile`=?,`uuid`=?,`password`=?,`money`=?,`imgKey`=?,`version`=?,`create_time`=?,`update_time`=?,`real_name`=?,`id_number`=?,`email`=?,`address`=? WHERE `id`=?";
     }
 
     @Override public String getSelectByKeySql(){
@@ -336,9 +306,6 @@ public final class UserMeta extends EntityMeta<UserDO ,UserDO.Key>{
                 o.setIdNumber(rs.getString("id_number"));
                 o.setEmail(rs.getString("email"));
                 o.setAddress(rs.getString("address"));
-                o.setLicenseImgKey(rs.getString("license_img_key"));
-                o.setAuthStatus(rs.getInt("auth_status"));
-                o.setAuthType(rs.getBoolean("auth_type"));
                 return o;
             }
         };
@@ -366,9 +333,6 @@ public final class UserMeta extends EntityMeta<UserDO ,UserDO.Key>{
                     o.setIdNumber(rs.getString("id_number"));
                     o.setEmail(rs.getString("email"));
                     o.setAddress(rs.getString("address"));
-                    o.setLicenseImgKey(rs.getString("license_img_key"));
-                    o.setAuthStatus(rs.getInt("auth_status"));
-                    o.setAuthType(rs.getBoolean("auth_type"));
                     return o;
                 } catch (InstantiationException | IllegalAccessException e) {
                     throw new SQLException("必须实现默认构造函数",e);

@@ -53,12 +53,6 @@ public class UserDO extends EntityObject<UserDO, UserDO.Key>{
     private String email;
     /**通讯地址*/
     private String address;
-    /**营业执照照片KEY*/
-    private String licenseImgKey;
-    /**认证，0未认证，1审核中，2已认证*/
-    private Integer authStatus;
-    /**认证类型,true企业,false个人*/
-    private Boolean authType;
 
     public static class Key implements KeyObject<UserDO, UserDO.Key>{
         private int id;
@@ -124,7 +118,7 @@ public class UserDO extends EntityObject<UserDO, UserDO.Key>{
     public UserDO() {
     }
 
-    public UserDO(String name,String nickName,String mobile,String uuid,String password,int money,String imgKey,int version,java.util.Date createTime,java.util.Date updateTime,String realName,String idNumber,String email,String address,String licenseImgKey,Integer authStatus,Boolean authType) {
+    public UserDO(String name,String nickName,String mobile,String uuid,String password,int money,String imgKey,int version,java.util.Date createTime,java.util.Date updateTime,String realName,String idNumber,String email,String address) {
         this.name = name;
         this.nickName = nickName;
         this.mobile = mobile;
@@ -139,9 +133,6 @@ public class UserDO extends EntityObject<UserDO, UserDO.Key>{
         this.idNumber = idNumber;
         this.email = email;
         this.address = address;
-        this.licenseImgKey = licenseImgKey;
-        this.authStatus = authStatus;
-        this.authType = authType;
     }
 
 
@@ -366,51 +357,6 @@ public class UserDO extends EntityObject<UserDO, UserDO.Key>{
         changeProperty("address",address);
     }
 
-    /**
-     * 营业执照照片KEY
-     **/
-    public String getLicenseImgKey() {
-        return licenseImgKey;
-    }
-
-    /**
-     * 营业执照照片KEY
-     **/
-    public void setLicenseImgKey(String licenseImgKey) {
-        this.licenseImgKey = licenseImgKey;
-        changeProperty("licenseImgKey",licenseImgKey);
-    }
-
-    /**
-     * 认证，0未认证，1审核中，2已认证
-     **/
-    public Integer getAuthStatus() {
-        return authStatus;
-    }
-
-    /**
-     * 认证，0未认证，1审核中，2已认证
-     **/
-    public void setAuthStatus(Integer authStatus) {
-        this.authStatus = authStatus;
-        changeProperty("authStatus",authStatus);
-    }
-
-    /**
-     * 认证类型,true企业,false个人
-     **/
-    public Boolean getAuthType() {
-        return authType;
-    }
-
-    /**
-     * 认证类型,true企业,false个人
-     **/
-    public void setAuthType(Boolean authType) {
-        this.authType = authType;
-        changeProperty("authType",authType);
-    }
-
     @Override
     public Object get(Field dbName){
         switch(dbName.getNativeValue()){
@@ -444,12 +390,6 @@ public class UserDO extends EntityObject<UserDO, UserDO.Key>{
             return email;
         case "address":
             return address;
-        case "license_img_key":
-            return licenseImgKey;
-        case "auth_status":
-            return authStatus;
-        case "auth_type":
-            return authType;
         default :
             return null;
         }
@@ -504,15 +444,6 @@ public class UserDO extends EntityObject<UserDO, UserDO.Key>{
         case "address":
             address = (String)obj;
             return true;
-        case "license_img_key":
-            licenseImgKey = (String)obj;
-            return true;
-        case "auth_status":
-            authStatus = (Integer)obj;
-            return true;
-        case "auth_type":
-            authType = (Boolean)obj;
-            return true;
         default :
             return false;
         }
@@ -520,7 +451,7 @@ public class UserDO extends EntityObject<UserDO, UserDO.Key>{
 
     @Override
     public String toString() {
-        return "User[id:"+ id+",name:"+ (name == null ?"null":name.substring(0, Math.min(name.length(), 64)))+",nickName:"+ (nickName == null ?"null":nickName.substring(0, Math.min(nickName.length(), 64)))+",mobile:"+ (mobile == null ?"null":mobile.substring(0, Math.min(mobile.length(), 64)))+",uuid:"+ (uuid == null ?"null":uuid.substring(0, Math.min(uuid.length(), 64)))+",password:"+ (password == null ?"null":password.substring(0, Math.min(password.length(), 64)))+",money:"+ money+",imgKey:"+ (imgKey == null ?"null":imgKey.substring(0, Math.min(imgKey.length(), 64)))+",version:"+ version+",createTime:"+ createTime+",updateTime:"+ updateTime+",realName:"+ (realName == null ?"null":realName.substring(0, Math.min(realName.length(), 64)))+",idNumber:"+ (idNumber == null ?"null":idNumber.substring(0, Math.min(idNumber.length(), 64)))+",email:"+ (email == null ?"null":email.substring(0, Math.min(email.length(), 64)))+",address:"+ (address == null ?"null":address.substring(0, Math.min(address.length(), 64)))+",licenseImgKey:"+ (licenseImgKey == null ?"null":licenseImgKey.substring(0, Math.min(licenseImgKey.length(), 64)))+",authStatus:"+ authStatus+",authType:"+ authType+ "]";
+        return "User[id:"+ id+",name:"+ (name == null ?"null":name.substring(0, Math.min(name.length(), 64)))+",nickName:"+ (nickName == null ?"null":nickName.substring(0, Math.min(nickName.length(), 64)))+",mobile:"+ (mobile == null ?"null":mobile.substring(0, Math.min(mobile.length(), 64)))+",uuid:"+ (uuid == null ?"null":uuid.substring(0, Math.min(uuid.length(), 64)))+",password:"+ (password == null ?"null":password.substring(0, Math.min(password.length(), 64)))+",money:"+ money+",imgKey:"+ (imgKey == null ?"null":imgKey.substring(0, Math.min(imgKey.length(), 64)))+",version:"+ version+",createTime:"+ createTime+",updateTime:"+ updateTime+",realName:"+ (realName == null ?"null":realName.substring(0, Math.min(realName.length(), 64)))+",idNumber:"+ (idNumber == null ?"null":idNumber.substring(0, Math.min(idNumber.length(), 64)))+",email:"+ (email == null ?"null":email.substring(0, Math.min(email.length(), 64)))+",address:"+ (address == null ?"null":address.substring(0, Math.min(address.length(), 64)))+ "]";
     }
 
     @Override

@@ -33,6 +33,7 @@ public class AppApiDaoBuilder implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         File root = new File("server-app");
+        //如果找不到路径，可以在此处添加
         if (!root.exists()) {
             root = new File("server/server-app");
         }

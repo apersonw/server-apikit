@@ -22,7 +22,7 @@
 - mysql端口：3307
 - flyway
 #### Web 应用服务器
-- tomcat端口：8081
+- tomcat端口：8078
 
 #### 三个启动类介绍
 - 项目启动类：cn.happy.server.app.AppApiMain

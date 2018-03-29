@@ -1,7 +1,9 @@
 package cn.happy.server.app;
 
 import cn.happy.server.app.client.ApiManager;
+import cn.happy.server.app.client.form.LoginForm;
 import org.forkjoin.apikit.client.AbstractHttpClientAdapter;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +16,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Import({TestsContext.class})
 @SpringBootTest(classes = AppApplication.class)
-//@ActiveProfiles("remote")
 @ActiveProfiles("mock")
 @ComponentScan(basePackages = {"cn.happy.fstar.app.util"})
 public abstract class BaseControllerTest {
@@ -30,7 +31,9 @@ public abstract class BaseControllerTest {
 
     public void auth() throws Exception {
         if (null == TOKEN) {
-            TOKEN = "";
+            String token = apiManager.accountApi.loginData(new LoginForm(MOBILE, PASSWORD));
+            Assert.assertNotNull(token);
+            TOKEN = token;
         }
         httpClientAdapter.setAccountToken(TOKEN);
     }

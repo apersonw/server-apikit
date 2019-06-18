@@ -1,10 +1,5 @@
 # 后端API集成框架
-
-###### 本项目基于 https://github.com/zuoge85/jteach 一切解释权归zuoge85所有
-
-
 # 项目说明文档
-###### 注：本项目基于 ApiKit 生成器
 ## 项目分层结构：
 #### 控制器：
 - spring boot starter

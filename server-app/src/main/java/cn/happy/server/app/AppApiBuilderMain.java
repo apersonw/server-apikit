@@ -22,7 +22,7 @@ public class AppApiBuilderMain {
         File root = new File("server-app");
         //如果路径错误，可以在这里添加
         if (!root.exists()) {
-            root = new File("server/server-app");
+            root = new File("server-apikit/server-app");
         }
 
         File dir = new File(root, "src/main/java/");

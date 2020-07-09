@@ -38,7 +38,7 @@ public class EmbededMysql {
         if (embeded) {
 
             //http://mirrors.ctyun.cn/Mysql/
-            DownloadConfig downloadConfig = DownloadConfig.aDownloadConfig().withBaseUrl("http://mirrors.sohu.com/mysql/").build();
+            DownloadConfig downloadConfig = DownloadConfig.aDownloadConfig().withBaseUrl("http://mirrors.sohu.com/mysql").build();
 
             MysqldConfig config = aMysqldConfig(v5_7_latest)
                     .withCharset(UTF8)

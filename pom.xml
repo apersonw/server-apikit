@@ -30,7 +30,7 @@
         <forkjoin.version>2.1.7.2-SNAPSHOT</forkjoin.version>
         <com.alibaba.druid.version>1.0.31</com.alibaba.druid.version>
         <com.google.guava.version>21.0</com.google.guava.version>
-        <commons-io.version>2.5</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <fluent-hc.version>4.5.3</fluent-hc.version>
 
